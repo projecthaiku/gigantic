@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{title}</title>
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+<link href="http://static.tumblr.com/rsbkwvn/UhWo9k5ez/animate.css" rel="stylesheet">
+<meta name="color:Background Color" content="#fff" />
+<meta name="color:Post Font Color" content="#999" />
+<meta name="color:Caption Font Color" content="#ccc" />
+<meta name="color:Quote Font Color" content="#ccc" />
+<meta name="color:Source Font Color" content="#ccc" />
+<meta name="color:Link Color" content="#000080" />
+<meta name="if:Description" content="1"/>
+<meta name="if:Menu" content="1"/>
+<meta name="if:Extra space after header" content="1"/>
+<meta name="if:Give me some credit" content="1"/>
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+<style>
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, div {
+	display: block;
+}
+body {
+	line-height: 1;
+	font-family: 'Lora', serif;
+	margin:10px;
+	padding:5px;
+	color: {color:Post Font Color};
+	background-color: {color:Background Color};
+}
+ol, ul {
+	list-style: none;
+}
+li {
+border-bottom:2px dashed #f0f0f0;
+padding:20px;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 0.5em 10px;
+  padding: 0.5em 10px;
+  font-style:italic;
+  color: {color:Quote Font Color};
+}
+blockquote p {
+  display: inline;
+}
+
+blockquote a {
+text-decoration:none
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+h1 {
+  font-size:120px;color: #777;
+  letter-spacing: .05em;
+  text-shadow: 1px 2px 0px #fff, 2px 3px 0px rgba(0, 0, 0, 0.2);
+}
+h2{font-size:110px;}
+h2 a{font-size:110px;}
+h3{font-size:100px;}
+h3 a{font-size:100px;margin-top:10px;padding-top:10px;}
+#posts{font-size:50px}
+a{font-size:50px;color: {color:Link Color};  letter-spacing: .05em; text-shadow: 1px 2px 0px #fff, 2px 3px 0px rgba(0, 0, 0, 0.2);}
+p{font-size:50px;}
+.description {margin-bottom:100px;display:block;}
+.caption p {
+font-size:80%;
+color:{color:Caption Font Color};
+width:500px;
+}
+.source {
+   font-size:80%;
+   font-style:italic;
+   color:{color:Source Font Color};
+   position:relative;
+   top:3px;
+}
+.source::before { 
+    content: "Who said it? ";
+    font-size: 50%;
+    position:relative;
+    top:8px;
+}
+#description{   color: #777;
+    letter-spacing: .05em;
+    text-shadow: 
+      1px 2px 0px #fff, 
+      2px 3px 0px rgba(0, 0, 0, 0.2);}
+.post.photo {
+max-width:100%;
+}
+.post.photo img {
+  border: 10px solid #f0f0f0;
+  border-bottom: 45px solid #f0f0f0;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+          max-width:100%;
+}
+.tumblr_video_container {
+     border: 10px solid #f0f0f0;
+  border-bottom: 45px solid #f0f0f0;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+          max-width:100%; 
+}
+.post.panorama{
+          max-width:100%; 
+}
+.post.photoset{
+          max-width:100%; 
+}
+.photoset .caption{display:none;}
+.photoset .caption-full{position:relative;top:50px;}
+.panorama .caption{display:none;}
+.panorama .caption-full{position:relative;top:50px;}
+.post.audio .caption{display:none;}
+.post.audio .caption-full{position:relative;top:50px;}
+.date a{text-decoration:none;font-size:50%;color:#3a3aa3;background-color:#f0f0f0;padding:10px;border-radius:10px;z-index:-1;}
+.date a:hover{color:#ddd}
+#spread-love{float:left;position:relative;bottom:8px;padding:20px;}
+#spread-post{float:left;position:relative;bottom:8px;padding:20px;}
+.meds{clear:both}
+#friends{padding:10px;font-size:50%;margin:5px;}
+#friends .avatar{width:50px;height:50px;border-radius:999px;}
+.action{padding:15px;}
+.action a{font-size:100%;}
+.action span{padding:10px;}
+#friends blockquote a{font-size:100%;}
+li.note{font-size:100%;padding:20px;margin:10px;}
+#credit{font-size:100%;color:#ccc;float:right;}
+#credit a{font-size:90%;}
+p{padding-top:20px;padding-bottom:20px;}
+.asker-avatar{position:relative;top:10px;border-radius:999px;border:1px dotted #ccc;padding:5px;}
+.chatty{font-size:80%;color:#ddd;}
+.label{font-weight:bold;}
+</style>
+<style>
+{CustomCSS}
+</style>
+ <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 class="animated bounce">{Title}</h1>
+{block:ifDescription}
+<p id="description"><span class="animated fadeIn">{Description}</span></p>
+{/block:ifDescription}
+{block:ShowAvatar}
+<span class="animated fadeIn"><img alt="Portrait image" class=
+"asker-avatar" src="{PortraitURL-128}"></span>
+{/block:ShowAvatar}
+{block:ifMenu}
+<span class="animated fadeIn"><a href=
+"/">Home</a>&nbsp;&nbsp;&nbsp;{block:HasPages}{block:Pages}&nbsp;&nbsp;&nbsp;<a href="{URL}">{Label}</a>&nbsp;&nbsp;&nbsp;{/block:Pages}{/block:HasPages}</span>
+{/block:ifMenu}
+{block:ifExtraspaceafterheader}
+<br>
+<br>
+<br>
+<br>
+{/block:ifExtraspaceafterheader}
+{block:TagPage}
+<h2>Posts tagged "{Tag}"</h2>
+{/block:TagPage}
+<ol id="posts">
+{block:Posts}{block:Text}
+<li class="post text">{block:Title}
+<h3><a href="{Permalink}">{Title}</a></h3>
+{/block:Title} {block:Date}<span class="date"><a href=
+"{Permalink}">{block:RebloggedFrom}Reblogged{/block:RebloggedFrom} {TimeAgo}</a></span>{/block:Date} {Body}<br>
+</li>
+{/block:Text}{block:Photo}
+<li class="post photo">{block:Date}<span class="date"><a href=
+"{Permalink}">{block:RebloggedFrom}Reblogged{/block:RebloggedFrom} {TimeAgo}</a></span>{/block:Date}<br>
+<img alt="{PhotoAlt}" src="{PhotoURL-500}"> {block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}</li>
+{/block:Photo}{block:Panorama}
+<li class="post panorama">{block:Date}<span class="date"><a href=
+"{Permalink}">{block:RebloggedFrom}Reblogged{/block:RebloggedFrom} {TimeAgo}</a></span>{/block:Date}<br>
+{LinkOpenTag} <img alt="{PhotoAlt}" src="{PhotoURL-Panorama}">
+{LinkCloseTag}{block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}</li>
+{/block:Panorama}{block:Photoset}
+<li class="post photoset">{block:Date}<span class="date"><a href=
+"{Permalink}">{block:RebloggedFrom}Reblogged{/block:RebloggedFrom} {TimeAgo}</a></span>{/block:Date}<br>
+{Photoset-500}{block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}</li>
+{/block:Photoset}{block:Quote}
+<li class="post quote">{block:Date}<span class="date"><a href=
+"{Permalink}">{block:RebloggedFrom}Reblogged{/block:RebloggedFrom} {TimeAgo}</a></span>{/block:Date}<br>
+<blockquote>{Quote}</blockquote>
+{block:Source}
+<div class="source">{Source}</div>
+{/block:Source}<br>
+</li>
+{/block:Quote}{block:Link}
+<li class="post link">{block:Date}<span class="date"><a href=
+"{Permalink}">{block:RebloggedFrom}Reblogged{/block:RebloggedFrom} {TimeAgo}</a></span>{/block:Date}<br>
+<span class="label">Link:</span> <a class="link" href="{URL}">{Name}</a>
+{block:Description}
+<div class="description2">{Description}</div>
+{/block:Description}</li>
+{/block:Link}{block:Chat}
+<li class="post chat">{block:Date}<span class="date"><a href=
+"{Permalink}">{block:RebloggedFrom}Reblogged{/block:RebloggedFrom} {TimeAgo}</a></span>{/block:Date}<br>
+{block:Title}
+<h3><a href="{Permalink}">{Title}</a></h3>
+{/block:Title}
+<ul class="chat">
+<li style="list-style: none; display: inline">
+<p class="chatty">[start of chat transcript]</p>
+{block:Lines}</li>
+<li class="{Alt} user_{UserNumber}">{block:Label} <span class=
+"label"><strong>{Label}</strong></span> {/block:Label}{Line}</li>
+<li style="list-style: none">{/block:Lines}</li>
+</ul>
+<p class="chatty">[end of chat transcript]</p>
+</li>
+{/block:Chat}{block:Video}
+<li class="post video">{block:Date}<span class="date"><a href=
+"{Permalink}">{block:RebloggedFrom}Reblogged{/block:RebloggedFrom} {TimeAgo}</a></span>{/block:Date}<br>
+{Video-500}{block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}</li>
+{/block:Video}{block:Audio}
+<li class="post audio">{block:Date}<span class="date"><a href=
+"{Permalink}">{block:RebloggedFrom}Reblogged{/block:RebloggedFrom} {TimeAgo}</a></span>{/block:Date}<br>
+{AudioEmbed}{block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}</li>
+{/block:Audio}{block:Answer}
+<li class="post qa">{block:Date}<span class="date"><a href=
+"{Permalink}">{block:RebloggedFrom}Reblogged{/block:RebloggedFrom} {TimeAgo}</a></span>{/block:Date}<br>
+<div class="question">
+<div class="asker">{Asker} asked:</div>
+<div class="asker-question">
+<blockquote><img alt="" class="asker-avatar" src=
+"{AskerPortraitURL-96}">{Question}</blockquote>
+</div>
+</div>
+<div class="replies">{Replies}</div>
+{/block:Answer} {block:PermalinkPage} {block:HasTags} {block:Tags} <span class=
+"date"><a href="{TagURL}">{Tag}</a></span> {/block:Tags} {/block:HasTags}
+<div id="spread-love">{LikeButton color="grey"}</div>
+<div id="spread-post">{ReblogButton color="grey"}</div>
+<div class="meds"></div>
+<div id="friends">{NoteCountWithLabel} {PostNotes-64}</div>
+{/block:PermalinkPage} {/block:Posts}</li>
+</ol>
+<br>
+<br>
+<br>
+<p id="footer"><span class="date">{block:PreviousPage} <a href="{PreviousPage}">&#171;
+Previous</a> {/block:PreviousPage}{block:NextPage} <a href="{NextPage}">Next
+&#187;</a>{/block:NextPage}
+
+<span class="date"><a href=
+"/archive">Archive</a></span>{block:AskEnabled} <a href=
+"/ask">{AskLabel}</a> </span>{/block:AskEnabled}{block:SubmissionsEnabled}<span class="date"><a href=
+"/ask">{SubmitLabel}</a> </span>{/block:SubmissionsEnabled}{block:HasPages}{block:Pages}
+<span class="date"><a href="{URL}">{Label}</a></span>
+{/block:Pages}{/block:HasPages} {block:ifGivemesomecredit}</p>
+<p id="credit">theme created by <a href=
+"http://project-haiku.com">projecthaiku</a>.</p>
+{/block:ifGivemesomecredit}
+<p></p>
+</body>
+</html>
